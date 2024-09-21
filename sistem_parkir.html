@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistem Parkir</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .parking-container {
+        background-color: white;
+        padding: 2rem;
+        border-radius: 5px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+      }
+      h2 {
+        text-align: center;
+        color: #333;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+      label {
+        margin-top: 1rem;
+        color: #666;
+      }
+      input,
+      select {
+        padding: 0.5rem;
+        margin-top: 0.5rem;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+      }
+      button {
+        margin-top: 1.5rem;
+        padding: 0.5rem;
+        background-color: #8f0000;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #6704f2;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parking-container">
+      <h2>Sistem Parkir</h2>
+      <form action="proses_penitipan.php" method="post">
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama" name="nama" required />
+
+        <label for="plat_nomor">Plat Nomor:</label>
+        <input type="text" id="plat_nomor" name="plat_nomor" required />
+
+        <label for="jenis_kendaraan">Jenis Kendaraan:</label>
+        <select id="jenis_kendaraan" name="jenis_kendaraan" required>
+          <option value="">Pilih jenis kendaraan</option>
+          <option value="motor">Motor</option>
+          <option value="mobil">Mobil</option>
+          <option value="truk">Truk</option>
+        </select>
+
+        <label for="merek_kendaraan">Merek Kendaraan:</label>
+        <input
+          type="text"
+          id="merek_kendaraan"
+          name="merek_kendaraan"
+          required
+        />
+
+        <label for="waktu_masuk">Waktu Masuk:</label>
+        <input
+          type="datetime-local"
+          id="waktu_masuk"
+          name="waktu_masuk"
+          required
+        />
+
+        <label for="durasi">Durasi:</label>
+        <input type="number" id="durasi" name="durasi" min="1" required />
+
+        <button type="submit">Catat Parkir</button>
+      </form>
+    </div>
+  </body>
+</html>
